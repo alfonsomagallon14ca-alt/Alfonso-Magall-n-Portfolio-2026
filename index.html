@@ -1,1 +1,1272 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Portafolio de Alfonso Magallón — Diseñador Gráfico e Ilustrador panameño.">
+<meta name="author" content="Alfonso Magallón">
+
+<title>Alfonso Magallón — Portafolio</title>
+
+<style>
+
+/* =========================
+   VARIABLES Y CONFIGURACIÓN
+========================= */
+
+:root {
+    --background: #f5f4f0;
+    --foreground: #171717;
+    --secondary: #777;
+    --border: #deddd7;
+    --white: #fff;
+
+    --max-width: 1440px;
+    --padding: 5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img, video {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(245,244,240,0.94);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 15px var(--padding);
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.brand {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+.brand-subtitle {
+    font-size: 11px;
+    color: var(--secondary);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 13px;
+}
+
+nav a {
+    font-size: 12px;
+    color: var(--secondary);
+    transition: color 0.25s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--foreground);
+}
+
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+main {
+    min-height: 75vh;
+    padding-top: 130px;
+}
+
+.view {
+    display: none;
+    animation: fadeIn 0.45s ease;
+}
+
+.view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 var(--padding);
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.section-heading h1 {
+    font-size: clamp(32px, 5vw, 60px);
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.section-heading p {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   TRABAJO / HOME
+========================= */
+
+.work-category {
+    margin-bottom: 85px;
+}
+
+.category-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.category-title h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.category-title span {
+    color: var(--secondary);
+    font-size: 11px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px 25px;
+}
+
+.project-card {
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-cover {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+    background: #e5e3dc;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-cover img {
+    transform: scale(1.035);
+}
+
+.project-info {
+    padding-top: 13px;
+}
+
+.project-info h3 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.project-info p {
+    font-size: 12px;
+    color: var(--secondary);
+    margin-top: 3px;
+}
+
+.project-number {
+    font-size: 10px;
+    color: var(--secondary);
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   DETALLE DE PROYECTO
+========================= */
+
+.project-detail {
+    padding-bottom: 80px;
+}
+
+.detail-header {
+    padding: 20px 0 45px;
+}
+
+.back-button {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--secondary);
+    margin-bottom: 35px;
+    transition: color 0.2s;
+}
+
+.back-button:hover {
+    color: var(--foreground);
+}
+
+.detail-title {
+    font-size: clamp(35px, 7vw, 85px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    max-width: 900px;
+}
+
+.detail-subtitle {
+    font-size: 14px;
+    color: var(--secondary);
+    margin-top: 18px;
+}
+
+.detail-description {
+    max-width: 650px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.detail-logo {
+    max-width: 180px;
+    max-height: 100px;
+    object-fit: contain;
+    margin-top: 25px;
+}
+
+/* Galería continua */
+
+.project-gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-item {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--gallery-background, #e5e3dc);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item.wide {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item.wide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gallery-item.vertical {
+    max-width: 900px;
+    margin: auto;
+}
+
+.gallery-item.vertical img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   QUIÉN SOY
+========================= */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 70px;
+    align-items: start;
+    padding-bottom: 100px;
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #e5e3dc;
+}
+
+.about-text h2 {
+    font-size: clamp(35px, 5vw, 65px);
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.about-text > p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.value-box {
+    border-top: 1px solid var(--border);
+    padding-top: 25px;
+    margin-top: 45px;
+}
+
+.value-box h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.value-box p {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 550px;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact-content {
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+.contact-content h1 {
+    font-size: clamp(45px, 9vw, 110px);
+    letter-spacing: -5px;
+    line-height: 0.9;
+    max-width: 900px;
+    margin-bottom: 35px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 1px solid var(--foreground);
+
+    font-size: 13px;
+
+    transition: background 0.25s, color 0.25s;
+}
+
+.contact-button:hover {
+    background: var(--foreground);
+    color: var(--white);
+}
+
+
+/* =========================
+   CTA FINAL
+========================= */
+
+.final-cta {
+    background: var(--foreground);
+    color: var(--white);
+
+    padding: 65px var(--padding);
+    margin-top: 100px;
+}
+
+.cta-inner {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+.final-cta h2 {
+    font-size: clamp(35px, 6vw, 70px);
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.final-cta .contact-button {
+    border-color: var(--white);
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.final-cta .contact-button:hover {
+    background: var(--white);
+    color: var(--foreground);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px var(--padding);
+    border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    font-size: 11px;
+    color: var(--secondary);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    :root {
+        --padding: 20px;
+    }
+
+    header {
+        padding: 12px 15px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    nav {
+        gap: 24px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    main {
+        padding-top: 115px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .project-cover {
+        aspect-ratio: 4 / 3;
+    }
+
+    .work-category {
+        margin-bottom: 65px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .profile-image {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 45px;
+    }
+
+    .detail-title {
+        letter-spacing: -1.5px;
+    }
+
+    .contact-content h1 {
+        letter-spacing: -2px;
+    }
+
+    .final-cta {
+        margin-top: 60px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+    <div class="header-inner">
+
+```
+    <a href="#trabajo" class="brand">
+        Alfonso Magallón
+    </a>
+
+    <span class="brand-subtitle">
+        Diseñador Gráfico e Ilustrador
+    </span>
+
+    <nav>
+        <a href="#trabajo" data-nav="trabajo">Trabajo</a>
+        <a href="#sobre-mi" data-nav="sobre-mi">¿Quién soy?</a>
+        <a href="#contacto" data-nav="contacto">Contacto</a>
+    </nav>
+
+</div>
+```
+
+</header>
+
+<!-- =========================
+     CONTENIDO
+========================= -->
+
+<main>
+
+<!-- HOME / TRABAJO -->
+
+<section id="trabajo" class="view active">
+
+```
+<div class="container">
+
+    <div class="section-heading">
+        <p class="eyebrow">Portafolio seleccionado</p>
+        <h1>Trabajo</h1>
+        <p>Una selección de proyectos de diseño e ilustración.</p>
+    </div>
+
+
+    <!-- BLOQUE A -->
+
+    <div class="work-category">
+
+        <div class="category-title">
+            <h2>Diseño de marca e identidad visual</h2>
+            <span>01 — 04</span>
+        </div>
+
+        <div class="projects-grid" id="brand-projects"></div>
+
+    </div>
+
+
+    <!-- BLOQUE B -->
+
+    <div class="work-category">
+
+        <div class="category-title">
+            <h2>Ilustración comercial</h2>
+            <span>05 — 09</span>
+        </div>
+
+        <div class="projects-grid" id="commercial-projects"></div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- QUIÉN SOY -->
+
+<section id="sobre-mi" class="view">
+
+```
+<div class="container">
+
+    <div class="section-heading">
+        <p class="eyebrow">Conoce al artista</p>
+    </div>
+
+    <div class="about-layout">
+
+        <img
+            src="images/1.jpg"
+            alt="Alfonso Magallón"
+            class="profile-image"
+            loading="lazy"
+        >
+
+        <div class="about-text">
+
+            <h2>¿Quién soy?</h2>
+
+            <p>
+                <strong>Diseñador gráfico e ilustrador panameño.</strong>
+                Trabajo con pequeñas empresas en la creación de su
+                imagen corporativa y colaboro con equipos creativos
+                en el desarrollo de campañas publicitarias.
+            </p>
+
+            <div class="value-box">
+
+                <h3>¿Cómo puedo aportar valor a tu proyecto?</h3>
+
+                <p>
+                    Puedo realizar piezas de alto valor y acoplarme
+                    a ritmos de trabajo que respondan a una línea
+                    gráfica ya establecida o creándola desde cero.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- CONTACTO -->
+
+<section id="contacto" class="view">
+
+```
+<div class="container">
+
+    <div class="contact-content">
+
+        <p class="eyebrow">Hablemos</p>
+
+        <h1>¿Tienes un proyecto en mente?</h1>
+
+        <p class="detail-subtitle">
+            Estoy disponible para colaboraciones y nuevos proyectos.
+        </p>
+
+        <div class="contact-links">
+
+            <a
+                href="mailto:meeraachoo@gmail.com"
+                class="contact-button"
+            >
+                Enviar correo ↗
+            </a>
+
+            <a
+                href="https://wa.me/50761178561"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-button"
+            >
+                WhatsApp ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- DETALLE DE PROYECTO -->
+
+<section id="detalle" class="view">
+
+```
+<div id="project-detail-content"></div>
+```
+
+</section>
+
+</main>
+
+<!-- =========================
+     CTA FINAL
+========================= -->
+
+<section class="final-cta">
+
+```
+<div class="cta-inner">
+
+    <p class="eyebrow">Contacto</p>
+
+    <h2>¡Trabajemos juntos!</h2>
+
+    <a
+        href="https://wa.me/50761178561"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-button"
+    >
+        WhatsApp ↗
+    </a>
+
+    <a
+        href="mailto:meeraachoo@gmail.com"
+        class="contact-button"
+    >
+        Correo ↗
+    </a>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+```
+<div class="footer-inner">
+
+    <span>© 2026 Alfonso Magallón</span>
+
+    <span>Diseñador Gráfico e Ilustrador</span>
+
+    <span>Panamá</span>
+
+</div>
+```
+
+</footer>
+
+<script>
+
+/* =================================
+   CONFIGURACIÓN DE PROYECTOS
+================================= */
+
+const image = number => `images/${number}.jpg`;
+
+const projects = [
+
+    // BLOQUE A: IDENTIDAD VISUAL
+
+    {
+        id: "misma-selva",
+        category: "brand",
+        title: "Todos vivimos en la misma Selva",
+        subtitle: "Diseño de identidad gráfica de campaña",
+        cover: image(2),
+        background: "#c2d532",
+        gallery: range(2, 36)
+    },
+
+    {
+        id: "alas-istmo",
+        category: "brand",
+        title: "Alas del Istmo",
+        subtitle: "Línea gráfica diseñada para festival de avistamiento de aves",
+        cover: "images/37.gif",
+        background: "#ffb900",
+        gallery: [
+            { src: "images/37.gif" },
+            ...range(38, 43),
+            { src: "images/44.gif" },
+            ...range(45, 68)
+        ]
+    },
+
+    {
+        id: "beefest",
+        category: "brand",
+        title: "Beefest",
+        subtitle: "Línea gráfica para Beefest, festival de abejas en El Valle de Antón (redes e impreso)",
+        cover: image(69),
+        background: "#faaf16",
+        gallery: [
+            ...range(69, 83),
+            { src: "images/84.gif", vertical: true }
+        ]
+    },
+
+    {
+        id: "tech-marleys",
+        category: "brand",
+        title: "Diseños para redes Tech Marleys",
+        subtitle: "Diseños realizados para las redes sociales de Tech Marley's",
+        cover: "images/85.gif",
+        background: "#ffffff",
+        gallery: [
+            { src: "images/85.gif" },
+            { src: image(87) },
+            { src: image(88) }
+        ]
+    },
+
+
+    // BLOQUE B: ILUSTRACIÓN COMERCIAL
+
+    {
+        id: "balboa",
+        category: "commercial",
+        title: "El sabor de la marea roja",
+        subtitle: "Proyecto conceptual para Cerveza Balboa",
+        cover: image("89"),
+        logo: "images/90.png",
+        description: "Proyecto ficticio realizado para Cerveza Balboa en el marco del Mundial 2026, diseñando una lata coleccionable alusiva a la pasión del panameño por el fútbol.",
+        background: "#b8000a",
+        gallery: [
+            image(91),
+            image(92),
+            "images/93.gif",
+            image(94),
+            image(95),
+            image(96),
+            image(97)
+        ]
+    },
+
+    {
+        id: "nike",
+        category: "commercial",
+        title: "Ellas nunca pidieron permiso",
+        subtitle: "Proyecto conceptual para Nike",
+        cover: "images/98.1.jpg",
+        logo: "images/98.png",
+        description: "Proyecto ficticio para Nike bajo el concepto 'Ellas nunca pidieron permiso', incentivando la inclusión y participación de las atletas femeninas.",
+        background: "#000000",
+        gallery: range(99, 105)
+    },
+
+    {
+        id: "cafe-duran",
+        category: "commercial",
+        title: "Café, combustible del panameño",
+        subtitle: "Taza Locura 2026 — Café Durán",
+        cover: image(106),
+        logo: "images/107.png",
+        description: "Participante en la Taza Locura 2026. Resalta la presencia de Café Durán en la vida cotidiana del panameño de a pie.",
+        background: "#fcd700",
+        gallery: [
+            { src: "images/108.mp4", video: true },
+            image(109),
+            image(110)
+        ]
+    },
+
+    {
+        id: "four-loko",
+        category: "commercial",
+        title: "Four Loko Print",
+        subtitle: "Ilustración ganadora — Four Loko Print 2025",
+        cover: image(111),
+        logo: "images/112.png",
+        description: "Ilustración ganadora del Four Loko Print 2025, evocando la cultura panameña combinada con el carácter de la marca.",
+        background: "#e5e3dc",
+        gallery: [
+            image(113),
+            "images/114.png",
+            "images/115.png",
+            "images/116.png"
+        ]
+    },
+
+    {
+        id: "pa-la-pina",
+        category: "commercial",
+        title: "Pa la piña — Cerveza Artesanal",
+        subtitle: "Diseño para Cervecería Clandestina",
+        cover: "images/117.1.jpg",
+        logo: "images/117.png",
+        description: "Diseño para Cervecería Clandestina en el lanzamiento de su cerveza de piña 'Pa la piña', evocando la naturaleza pícara de su nombre.",
+        background: "#e5e3dc",
+        gallery: [
+            image(118),
+            image(119),
+            image(120)
+        ]
+    }
+
+];
+
+
+/* =================================
+   GENERADOR DE RANGOS DE IMÁGENES
+================================= */
+
+function range(start, end) {
+
+    return Array.from(
+        { length: end - start + 1 },
+        (_, index) => ({
+            src: image(start + index)
+        })
+    );
+
+}
+
+
+/* =================================
+   GENERAR TARJETAS
+================================= */
+
+function renderCards() {
+
+    const brandContainer = document.getElementById("brand-projects");
+    const commercialContainer = document.getElementById("commercial-projects");
+
+    projects.forEach((project, index) => {
+
+        const card = document.createElement("a");
+
+        card.href = `#proyecto/${project.id}`;
+        card.className = "project-card";
+
+        card.innerHTML = `
+
+            <div
+                class="project-cover"
+                style="background:${project.background}"
+            >
+
+                <img
+                    src="${project.cover}"
+                    alt="${project.title}"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-info">
+
+                <span class="project-number">
+                    ${String(index + 1).padStart(2, "0")}
+                </span>
+
+                <h3>${project.title}</h3>
+
+                <p>${project.subtitle}</p>
+
+            </div>
+
+        `;
+
+        if (project.category === "brand") {
+            brandContainer.appendChild(card);
+        } else {
+            commercialContainer.appendChild(card);
+        }
+
+    });
+
+}
+
+
+/* =================================
+   GENERAR GALERÍA
+================================= */
+
+function renderGallery(project) {
+
+    return project.gallery.map(item => {
+
+        if (typeof item === "string") {
+            item = { src: item };
+        }
+
+        const src = item.src;
+
+        const extension = src.split(".").pop().toLowerCase();
+
+        if (item.video || extension === "mp4") {
+
+            return `
+                <div class="gallery-item">
+                    <video
+                        src="${src}"
+                        controls
+                        playsinline
+                        preload="metadata"
+                    ></video>
+                </div>
+            `;
+
+        }
+
+        const verticalClass = item.vertical ? "vertical" : "wide";
+
+        return `
+            <div
+                class="gallery-item ${verticalClass}"
+                style="--gallery-background:${project.background}"
+            >
+                <img
+                    src="${src}"
+                    alt="${project.title}"
+                    loading="lazy"
+                >
+            </div>
+        `;
+
+    }).join("");
+
+}
+
+
+/* =================================
+   DETALLE DE PROYECTO
+================================= */
+
+function renderProject(id) {
+
+    const project = projects.find(item => item.id === id);
+
+    if (!project) {
+        location.hash = "trabajo";
+        return;
+    }
+
+    const container = document.getElementById("project-detail-content");
+
+    container.innerHTML = `
+
+        <div
+            class="container project-detail"
+            style="--gallery-background:${project.background}"
+        >
+
+            <div class="detail-header">
+
+                <a href="#trabajo" class="back-button">
+                    ← Volver a trabajos
+                </a>
+
+                <p class="eyebrow">
+                    ${project.category === "brand"
+                        ? "Diseño de marca e identidad visual"
+                        : "Ilustración comercial"}
+                </p>
+
+                <h1 class="detail-title">
+                    ${project.title}
+                </h1>
+
+                <p class="detail-subtitle">
+                    ${project.subtitle}
+                </p>
+
+                ${project.description
+                    ? `<p class="detail-description">${project.description}</p>`
+                    : ""}
+
+                ${project.logo
+                    ? `<img src="${project.logo}" class="detail-logo" alt="Identidad del proyecto">`
+                    : ""}
+
+            </div>
+
+        </div>
+
+        <div
+            class="project-gallery"
+            style="--gallery-background:${project.background}"
+        >
+
+            ${renderGallery(project)}
+
+        </div>
+
+        <div class="container" style="padding-top:35px">
+
+            <a href="#trabajo" class="back-button">
+                ← Volver a todos los proyectos
+            </a>
+
+        </div>
+
+    `;
+
+    window.scrollTo(0, 0);
+
+}
+
+
+/* =================================
+   NAVEGACIÓN SPA
+================================= */
+
+function navigate() {
+
+    const hash = location.hash.replace("#", "") || "trabajo";
+
+    const views = document.querySelectorAll(".view");
+
+    views.forEach(view => {
+        view.classList.remove("active");
+    });
+
+    document.querySelectorAll("[data-nav]").forEach(link => {
+        link.classList.remove("active");
+    });
+
+
+    if (hash.startsWith("proyecto/")) {
+
+        const id = hash.split("/")[1];
+
+        document.getElementById("detalle").classList.add("active");
+
+        renderProject(id);
+
+        return;
+    }
+
+
+    const validViews = [
+        "trabajo",
+        "sobre-mi",
+        "contacto"
+    ];
+
+    const selectedView = validViews.includes(hash)
+        ? hash
+        : "trabajo";
+
+    document.getElementById(selectedView).classList.add("active");
+
+    const activeLink = document.querySelector(
+        `[data-nav="${selectedView}"]`
+    );
+
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+
+    window.scrollTo(0, 0);
+
+}
+
+
+/* =================================
+   INICIALIZACIÓN
+================================= */
+
+renderCards();
+
+window.addEventListener("hashchange", navigate);
+
+navigate();
+
+</script>
+
+</body>
+</html>
 
